@@ -1,0 +1,89 @@
+% \documentclass[12pt, a4paper]{article}
+% \title{01 Basic}
+% \author{Po-Hsuan Huang\\ 
+%     \texttt{aben20807@gmail.com}
+% }
+
+% \begin{document}
+% \maketitle
+
+% Contents.
+
+% \end{document}
+
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{hyperref} % links of cite, ref
+\hypersetup{
+    colorlinks,
+    linkcolor=[RGB]{120, 29, 125},
+    citecolor=[RGB]{120, 29, 125},
+    urlcolor=[RGB]{0, 85, 150}
+}
+
+% use libertine font
+\RequirePackage[T1]{fontenc}
+\RequirePackage[tt=false, type1=true]{libertine}
+\RequirePackage[varqu]{zi4}
+\RequirePackage[libertine]{newtxmath}
+
+\title{01 Basic}
+
+\author{Po-Hsuan Huang\\ 
+    \texttt{aben20807@gmail.com}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{First Section Title}\label{sec:s1}
+
+Sed ultrices magna non nulla bibendum sagittis. Nulla a dignissim lectus Section~\ref{sec:s2}.
+
+\subsection{First Subsection Title}\label{sec:sub1}
+
+Donec posuere lacus nec nisl tincidunt volutpat.
+
+\subsection{Second Subsection Title}\label{sec:sub2}
+
+Curabitur porttitor, nunc eget malesuada egestas, orci urna eleifend massa, et tempus ipsum nulla in turpis. 
+
+\paragraph{First Paragraph Title}\label{sec:p1}
+
+Nulla ac risus augue. In enim erat, laoreet elementum risus eu, facilisis convallis mi.
+
+\paragraph{Second Paragraph Title}\label{sec:p2}
+
+Nunc scelerisque ultricies gravida.
+
+\section{Second Section Title}\label{sec:s2}
+
+Donec velit risus, sollicitudin et mollis vitae, ultrices eget orci Section~\ref{sec:sub1}, Section~\ref{sec:sub2}. Vivamus id placerat nulla, id eleifend mi.
+
+\section{Font size}\label{sec:font_size}
+
+\begin{itemize}
+    \item {\Huge Huge}
+    \item {\huge huge}
+    \item {\LARGE LARGE}
+    \item {\Large Large}
+    \item {\large large}
+    \item {\normalsize normalsize}
+    \item {\small small}
+    \item {\footnotesize footnotesize}
+    \item {\scriptsize scriptsize}
+    \item {\tiny tiny}
+\end{itemize}
+
+\section{Text highlight}
+
+\begin{enumerate}
+    \item {\textbf{textbf}}
+    \item {\texttt{texttt}}
+    \item {\textit{textit}}
+    \item {\emph{emph}}
+    \item {\underline{underline}}
+\end{enumerate}
+
+\end{document}

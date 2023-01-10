@@ -1,0 +1,47 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\title{04 Table}
+\author{Po-Hsuan Huang\\ 
+    \texttt{aben20807@gmail.com}
+}
+
+\begin{document}
+\vspace*{-50pt}
+    {\let\newpage\relax\maketitle}
+
+Test reference: Table~\ref{tab:example}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Caption of the table.}\label{tab:example}
+    \begin{tabular}{lll}
+    \toprule
+    \textbf{Category} & \textbf{Work} & \textbf{Tags} \\
+    \midrule
+        Open     &   Title A   &   A, B, C   \\
+        Open     &   Title B   &  B, D    \\
+        Close     &   Title C   &  A, B, D    \\
+        Close     &   Title D   &  E   \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \caption{Caption of the table 2.}\label{tab:example2}
+    \begin{tabular}{llrr}
+    \toprule
+    \multirow{2}{*}{\textbf{Category}} & \multirow{2}{*}{\textbf{Work}} & \multicolumn{2}{c}{\textbf{Time}} \\ \cline{3-4} 
+                              &                       & \textbf{First}      & \textbf{Second}      \\ \hline
+    \multirow{2}{*}{Open}         &  Title A                     &    1.1        &    3.0       \\
+                                                        &  Title B                     &    2.0       &    2.3       \\ \hline
+    \multirow{2}{*}{Close}         &  Title C                     &   3.8        &    5.6       \\
+                                                        &   Title D                    &   4.6        &    8.8       \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\end{document}

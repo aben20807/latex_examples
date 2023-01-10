@@ -1,0 +1,34 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{hyperref}
+\usepackage{placeins } % FloatBarrier
+\usepackage[%
+    backref=true,
+    backend=bibtex,
+    maxbibnames=99,
+    sorting=none,
+    block=space]{biblatex} % back link for ref in Reference
+% \DefineBibliographyStrings{english}{
+%     backrefpage = {page},
+%     backrefpages = {pages},
+% }
+\renewcommand{\cite}{\autocite}
+\addbibresource{example.bib}
+
+\title{07\_1 Bibliography Back Reference}
+\author{Po-Hsuan Huang\\ 
+    \texttt{aben20807@gmail.com}
+}
+
+\begin{document}
+\maketitle
+
+Test cite: \cite{XXX, huang2021tonic, huang2022pops, huang2023securetvm}.
+
+\FloatBarrier
+\printbibliography[%
+    heading=bibintoc,
+    title={References}
+]
+
+\end{document}

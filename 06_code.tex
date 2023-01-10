@@ -1,0 +1,57 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor} % color
+\usepackage{listings} % code
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{10} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{10}  % for normal
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self,with},              % Add keywords here
+keywordstyle=\ttb\color{BlueViolet},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{BrickRed},    % Custom highlighting style
+stringstyle=\color{ForestGreen},
+frame=single,                         % Any extra options here
+showstringspaces=false,
+morecomment=[l][\itshape\color{Gray}]{\#},
+numbers=left,
+stepnumber=1,
+}}
+% Python for inline
+\newcommand\pythoninline[1]{%
+        {\pythonstyle\lstinline!#1!}%
+}
+% Python environment
+\lstnewenvironment{python}[1][]{%
+    \pythonstyle\footnotesize\lstset{#1}}{}
+
+\title{06 Code}
+\author{Po-Hsuan Huang\\ 
+    \texttt{aben20807@gmail.com}
+}
+
+\begin{document}
+\maketitle
+
+Test reference:  Line~\ref{line:do-add} in Code~\ref{list:python}.
+
+\begin{python}[
+    float,floatplacement=ht,
+    caption={Simple python code.},
+    label=list:python,
+    escapechar=|]
+def func(num1, num2):
+    # This function adds two numbers
+    s = num1 + num2 |\label{line:do-add}|
+    return s
+
+if __name__ == "__main__":
+    x = func(3, 5)
+    print(f"Answer: {x}")
+\end{python}
+
+\end{document}

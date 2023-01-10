@@ -1,0 +1,82 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{xurl} % url wrap
+
+\usepackage{xcolor}
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\newcommand{\cmt}[2][red]{ {\color{#1} XXX: #2} }
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+\newcommand{\revised}[2][darkpastelgreen]{{\color{#1}#2}}
+% \newcommand{\revised}[1]{#1}
+\newcommand{\Circle}[1]{\raisebox{.5pt}{\textcircled{\raisebox{-0.9pt} {#1}}}}
+
+\usepackage[calc,useregional]{datetime2} % currenttime
+% Timezone https://tex.stackexchange.com/a/634977
+\newcommand{\DTMtznow}[2]{%
+\DTMsavenow{now}%
+\DTMtozulu{now}{currzulu}%
+\DTMsaveaszulutime{currtaipei}{\DTMfetchyear{currzulu}}{\DTMfetchmonth{currzulu}}{\DTMfetchday{currzulu}}{\DTMfetchhour{currzulu}}{\DTMfetchminute{currzulu}}{\DTMfetchsecond{currzulu}}{#2}{00}%
+\DTMdisplay{\DTMfetchyear{currtaipei}}{\DTMfetchmonth{currtaipei}}{\DTMfetchday{currtaipei}}{}{\DTMfetchhour{currtaipei}}{\DTMfetchminute{currtaipei}}{\DTMfetchsecond{currtaipei}}{#1}{00}%
+}
+\newcommand{\DTMtaipeinow}{\DTMtznow{+08}{-08}}
+
+\title{08 Misc}
+\author{Po-Hsuan Huang\\ 
+    \texttt{aben20807@gmail.com}
+}
+
+\begin{document}
+\maketitle
+
+\section{vspace}
+
+\begin{table}[!h]
+    \centering
+    \begin{minipage}[t]{.48\linewidth}
+        \includegraphics[width=\linewidth]{figures/paper-example.pdf}
+        \vspace{-10pt}
+        \captionof{figure}{First figure (-10pt).}
+        \label{fig:A}
+    \end{minipage}
+    \qquad
+    \begin{minipage}[t]{.44\linewidth}
+        \includegraphics[width=\linewidth]{figures/cat.png}
+        \vspace{10pt}
+        \captionof{figure}{Second figure (+10pt).}
+        \label{fig:B}
+    \end{minipage}
+\end{table}
+
+\section{email with mbox}
+
+\begin{itemize}
+    \item xxxXxxx@example.com
+    \item \href{mailto:xxxXxxx@example.com}{xxx-xxx@example.com}
+    \item \mbox{xxxXxxx@example.com}
+\end{itemize}
+
+\clearpage
+
+\section{newcommand}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Maecenas xnsl \email{xxxXxxx@example.com} auctor, nulla 
+vitae fringilla convallis, tellus ex laoreet ipsum, convallis 
+blandit lorem dolor ut nisl. \cmt{need to add references.} 
+\cmt[green]{OK}. This is \revised{an} apple.
+
+\section{circled numbers}
+
+\begin{itemize}
+    \item \textcircled{0}, \textcircled{1}, \textcircled{2}, \textcircled{3}, \textcircled{4}, \textcircled{5}, \textcircled{6}, \textcircled{7}, \textcircled{8}, \textcircled{9}
+    \item \Circle{0}, \Circle{1}, \Circle{2}, \Circle{3}, \Circle{4}, \Circle{5}, \Circle{6}, \Circle{7}, \Circle{8}, \Circle{9}
+\end{itemize}
+
+\section{build time}
+
+\hfill{\color{gray}\footnotesize Last modified: \DTMtaipeinow}
+
+\end{document}

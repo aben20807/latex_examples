@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[linesnumbered,algoruled,boxed,lined]{algorithm2e}
+\SetKwInOut{KwIn}{Input} % align input, output
+\SetKwInOut{KwOut}{Output} % align input, output
+\SetKw{Continue}{continue} % new keyword
+\SetKw{Or}{or} % new keyword
+\SetArgSty{textnormal}
+\SetAlCapNameFnt{\small}
+\SetAlCapFnt{\small}
+\newcommand\mycommfont[1]{\rmfamily\itshape\textcolor{gray}{#1}} % comment style
+\SetCommentSty{mycommfont} % comment style
+\usepackage[T1]{fontenc} % for '<'
+
+\title{05 Algorithm}
+\author{Po-Hsuan Huang\\ 
+    \texttt{aben20807@gmail.com}
+}
+
+\begin{document}
+\maketitle
+
+Test reference: Algorithm~\ref{algo:example}, and~\ref{algo:example2}.
+
+\begin{algorithm}[ht]
+    \SetKwProg{Function}{Function}{ :}{end}
+    \caption{Vector \texttt{add} function.} \label{algo:example}
+    \Function{add($v_a, v_b$)}{
+        $v_{ret} \gets $ empty vector with the same length with $v_a$ \;
+        \For{$i$=0; $i$ < $\vert v_a \vert$; $i$++}{
+            $v_{ret}[i] \gets v_a[i] + v_b[i]$ \;
+        }
+      \KwRet{$v_{ret}$} \;
+    }
+  \end{algorithm}
+
+\begin{algorithm}[ht]
+    \caption{Vector \texttt{add}.} \label{algo:example2}
+    \KwIn{$v_a$, an input vector. \newline
+        $v_b$, an input vector.
+    }
+    \KwOut{$v_{ret}$, a vector for output.
+    }
+    $v_{ret} \gets $ empty vector with the same length with $v_a$ \tcp*[l]{Initialization.}
+    \For{$i$=0; $i$ < $\vert v_a \vert$; $i$++}{
+        $v_{ret}[i] \gets v_a[i] + v_b[i]$ \;
+    }
+\end{algorithm}
+
+\end{document}
